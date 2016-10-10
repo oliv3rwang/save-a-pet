@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <script data-require="angular.js@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src='/app/app.js'></script>
+    <title>PetSaver</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div ng-controller='appController as vm'>
+      <form ng-submit='vm.getLocation(vm.userInput)'>
+        <input type='text' ng-model='vm.userInput' placeholder="Enter Zip Here"/>
+        <button type='submit'>Go!</button>
+      </form>
+
+    </div>
+  </body>
+</html>

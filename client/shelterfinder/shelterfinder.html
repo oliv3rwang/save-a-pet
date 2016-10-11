@@ -1,0 +1,24 @@
+<div class='container' ng-controller='shelterController as vm'>
+  <form ng-submit="vm.getLocation(vm.zip)">
+    <input type="text" ng-model="vm.zip" name='location' placeholder="Enter Zip Here">
+    <button>Go!</button>
+  </form>
+  <div ng-repeat="shelter in vm.shelters">
+    <ul>
+      <li ng-click='vm.clickSaver(shelter.id.$t)' ng-model='shelter.id.$t'>{{shelter.name.$t}}</li>
+    </ul>
+    </div>
+  <div name='choice'>
+    <h1> What kind of pet are you looking for?</h1>
+    <img ng-click='vm.catClick()' src='../pictures/kitten.jpg'/>
+    <img ng-click='vm.dogClick()' src='../pictures/puppy.jpg'/>
+
+  </div>
+
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->

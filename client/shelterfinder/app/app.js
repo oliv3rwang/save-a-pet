@@ -9,21 +9,23 @@ app.controller('appController', function(locationGrabber) {
   vm.getLocation = function() {
     locationGrabber.getLocation(vm.userInput)
     .then(function(response){
-      console.log('Responded!!', response)
+      console.log('Responded!!')
       vm.shelters = response.data
     })
     .catch(function(err){
-      console.error("Error!", err)
+      console.error("Error!")
     })
 
   }
 })
 
 app.factory('locationGrabber', function($http){
-  console.log($http)
   console.log('invoking locationGrabber')
-  function getLocation (zip) {
-    return $http.get('/api/findShelter')
+  var getLocation = function(zip) {
+    return $http.get('/api/findshelter' + zip)
+    .then(function(data){
+      return data
+    })
   }
 
 

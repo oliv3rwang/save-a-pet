@@ -1,0 +1,19 @@
+{
+  "name": "save-a-pet",
+  "version": "0.0.0",
+  "homepage": "https://github.com/oliv3rwang/save-a-pet",
+  "authors": [
+    "MKS-students <mks.students@hackreactor.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngstorage": "~0.3.11"
+  }
+}

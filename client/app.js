@@ -23,3 +23,18 @@ app.factory('locationGrabber', function($http){
     getLocation: getLocation
   }
 })
+
+app.factory('renderPets', function($http,$localStorage){
+  var getPets = function() {
+    console.log('rendering pets', $localStorage)
+    return $http.get('/api/renderpets' + $localStorage.choice + $localStorage.shelterId)
+      .then(function(data) {
+        console.log('this is data in renderpets', data)
+        return data
+      })
+  }
+  return {
+    getPets: getPets
+  }
+
+})

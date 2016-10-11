@@ -54,10 +54,13 @@ app.get('/api/findshelter/:zip', function(req, res){
     }
   })
 
-
-
 });
+
+app.get('/api/renderpets/:params', function(req, res) {
+  console.log('This is working!')
+  console.log('This is our params!', req.params);
+})
 
 
 app.listen(port);
-console.log(`server listening on port ${port}`);
+console.log('server listening on port ${port}');

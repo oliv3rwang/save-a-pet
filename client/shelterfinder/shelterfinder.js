@@ -1,13 +1,15 @@
-var shelterfinder = angular.module('shelterfinder', ['ngstorage'])
+var shelterfinder = angular.module('shelterfinder', [])
 
-shelterfinder.controller('shelterController', function(locationGrabber) {
-  var vm = this
+shelterfinder.controller('shelterController', function(locationGrabber, $localStorage) {
+  var vm = this;
   vm.userInput = '';
   vm.shelters = [];
   vm.shelterId = null;
   vm.choice = '';
   vm.choice = $localStorage.choice
   vm.shelterId = $localStorage.shelterId
+  console.log($localStorage.choice)
+  console.log($localStorage.shelterId)
 
   vm.clickSaver = function(shelter){
     console.log(shelter);
@@ -16,12 +18,10 @@ shelterfinder.controller('shelterController', function(locationGrabber) {
   }
   vm.catClick = function() {
     vm.choice = 'cat';
-
     console.log("great choice")
   }
   vm.dogClick = function() {
     vm.choice = 'dog';
-
     console.log("squirrel")
   }
 
